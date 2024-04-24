@@ -21,6 +21,9 @@ SET time_zone = "+00:00";
 -- Database: `busia`
 --
 
+CREATE DATABASE IF NOT EXISTS busia;
+USE busia;
+
 -- --------------------------------------------------------
 
 --
