@@ -43,17 +43,20 @@ $item = $row[0];
     </div>
 </div>
 
+
+
 <script>
     window.onload = () => {
 
+        var lat = <?= $item['latitude'] ?>;
+        var long = <?= $item['longitude'] ?>;
 
-        var map = L.map('mymap2').setView([<?= $item['latitude'] ?>, <?= $item['longitude'] ?>], 17);
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        var map = L.map('mymap2').setView([lat, long], 20);
+
+        L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
             maxZoom: 20,
-            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
         }).addTo(map);
-
-
 
         var icmarker2 = L.AwesomeMarkers.icon({
             icon: '<?= $item['type'] ?>',
@@ -61,11 +64,11 @@ $item = $row[0];
             markerColor: 'blue'
         });
 
-        var marker2 = L.marker([<?= $item['latitude'] ?>, <?= $item['longitude'] ?>], {
+        L.marker([lat, long],{
             icon: icmarker2
-        }).addTo(map);
-        marker2.bindPopup("<b><?= $item['name'] ?></b>").openPopup();
-
+        }).addTo(map)
+            .bindPopup('<b><?= $item['name'] ?></b>')
+            .openPopup();
     }
 </script>
 <?php
