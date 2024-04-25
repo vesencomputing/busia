@@ -112,7 +112,7 @@
 <!-- Page JS -->
 
 
-<script>
+<!-- <script>
     var map = L.map('mymap').setView([0.46, 34.105], 17);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 20,
@@ -140,6 +140,6 @@
 
 
 
-</script>
+</script> -->
 </body>
 </html>
