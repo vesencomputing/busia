@@ -7,7 +7,7 @@ function connect()
     if($_SERVER['HTTP_HOST'] == 'localhost') {
     return mysqli_connect("localhost", "root", "", "busia");
 }else{
-    return mysqli_connect("localhost", "vesencom_busia", "8j23@$nP&YEv2tN", "vesencom_busia");
+    return mysqli_connect("localhost", "vesencom_busia", '8j23@$nP&YEv2tN', "vesencom_busia");
 }
 }
 function security($name) //handling and sanitizing form data
